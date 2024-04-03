@@ -3,17 +3,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = 'https://dolarbipolar.com'
-class_list = set() 
-page = requests.get( URL ) 
-soup = BeautifulSoup( page.content , 'html.parser') 
-tags = {tag.name for tag in soup.find_all()} 
-for tag in tags: 
-  
-    
-    for i in soup.find_all( tag ): 
-        if i.has_attr( "class" ): 
-    if len( i['class'] ) != 0: 
-                class_list.add(" ".join( i['class'])) 
-  
-print( class_list ) 
+pagina = requests.get('https://www.google.com/finance/quote/EUR-BRL?sa=X&ved=2ahUKEwjfrYTgtaSFAxWcpZUCHaBgC6IQmY0JegQIBhAv')
+sopa = BeautifulSoup(pagina.text, 'html.parser')
+
+container = sopa.findAll('div', {'class': "YMlKec fxKbKc"})
+
+
+
+euro = container[0].text.strip()
+
+print(euro)
+

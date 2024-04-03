@@ -10,7 +10,15 @@ container = sopa.findAll('div', {'class': "YMlKec fxKbKc"})
 
 
 
-euro = container[0].text.strip()
+valor_euro = container[0].text.strip()
 
-print(euro)
 
+pagina2 = requests.get('https://www.google.com/finance/quote/USD-BRL?sa=X&ved=2ahUKEwibndLr-qSFAxWiqJUCHSEjCT8QmY0JegQIBxAv')
+sopa2 = BeautifulSoup(pagina2.text, 'html.parser')
+
+container2 = sopa2.findAll('div', {'class': "YMlKec fxKbKc"})   
+
+valor_dolar = container2[0].text.strip()
+
+print(valor_dolar)
+print(valor_euro)

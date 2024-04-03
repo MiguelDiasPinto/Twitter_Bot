@@ -10,6 +10,7 @@ sopa = BeautifulSoup(pagina.text, 'html.parser')
 container = sopa.findAll('div', {'class': "YMlKec fxKbKc"})
 
 valor_euro = container[0].text.strip()
+#texto_euro = print('{:.2f}'.format(float(valor_euro)))
 
 
 #coletando dados do dolar
@@ -19,4 +20,10 @@ sopa2 = BeautifulSoup(pagina2.text, 'html.parser')
 container2 = sopa2.findAll('div', {'class': "YMlKec fxKbKc"})   
 
 valor_dolar = container2[0].text.strip()
+#texto_dolar = print('{:.2f}'.format(float(valor_dolar)))
 
+texto = ("💲 Cotação Dolar e Euro: \n"+ \
+        "💵 O valor do Dolar é: US${:.2f}".format(float(valor_dolar)) + "\n" + \
+        "💶 O valor do Euro é: €{:.2f}".format(float(valor_euro)) + "\n\n")
+
+print(texto)

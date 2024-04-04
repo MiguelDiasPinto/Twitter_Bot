@@ -28,19 +28,18 @@ texto = ("💲 Cotação Dolar e Euro: \n"+ \
         "💵 O valor do Dólar é: US${:.2f}".format(float(valor_dolar)) + "\n" + \
         "💶 O valor do Euro é: €{:.2f}".format(float(valor_euro)) + "\n\n")
 
-#print(texto)
-
 
 #Criando o bot
 
-consumer_key = 'z8zoQ7lZcHpOlrUBhPKM0WdP6'
-consumer_secret = 'tQy62LQbfiFIsY3RdYCCO1G79OKKzGysq0EgvtnMkNWX9QyvMP'
-access_token = '1775394121240186880-u1uK36oHkH0PfakDrg6zrWtz3t5PfU'
-access_token_secret = 'WhhJYX0OeW8kQeOBPNNWraTfEAUQi7rZhrIfs085QTnb2'
+consumer_key = 'sua_consumer_key'
+consumer_secret = 'seu_consumer_secret'
+access_token = 'seu_acess_token'
+access_token_secret = 'seu_token_secret'
 
 # Autenticação no Twitter
 auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
 api = tweepy.API(auth)
+
 #automatizando o bot
 
 def enviar_tweet():
